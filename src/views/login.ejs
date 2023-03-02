@@ -1,0 +1,62 @@
+
+<%- include ('includes/header') -%>
+<%- include ('includes/nave') -%>
+
+<div class="container">
+     <div class="row">
+        <div class="col-lg-2"></div>
+
+        <div class="col-lg-8 my-3">
+            <h1 class="text-center">Criar conta ou Logar</h1>
+            <p class="text-center lead">Seus contatos estão abaixo</p>
+
+            <%- include ('includes/messages') %>
+
+           <div class="row">
+            <div class="col-lg">
+                <h4>Faça seu cadastro</h4>
+             <p>Preencha o cadastro caso você não tenha conta</p>
+
+             <form class="cadastro" action="/login/register" method="POST">
+                <input type="hidden" name="_csrf" value= <%=csrfToken%>>
+                <div class="form-group">
+                    <label >seu e-mail</label>
+                    <input type="email" class="form-control" name="email">
+                </div>
+                
+                <div class="form-group">
+                    <label >sua senha</label>
+                    <input type="password" class="form-control" name="senha">
+                    <button type="submit" class="btn btn-primary my-4">Criar minha conta</button>
+                </div>
+
+            </div>
+        </form>
+
+            <div class="col-lg">
+              <h4>Faça login</h4>
+              <p>Preencha o login caso você  tenha  uma conta</p>
+              <form class="login-Cadastro"  action="/login/login" method="POST">
+                <input type="hidden" name="_csrf" value= <%=csrfToken%>>
+                <div class="form-group">
+                    <label >seu e-mail</label>
+                    <input type="email" class="form-control" name="email">
+                </div>
+                
+                <div class="form-group">
+                    <label >sua senha</label>
+                    <input type="password" class="form-control" name="senha">
+                    <button type="submit" class="btn btn-primary my-4">Logar</button>
+                </div>
+
+            </div>
+        </form>
+
+            </div>
+           </div>
+        </div>
+        <div class="col-lg-2"></div>
+     </div>
+</div>
+
+<%- include ('includes/fotter') -%>
