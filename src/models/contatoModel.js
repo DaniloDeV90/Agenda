@@ -40,7 +40,7 @@ Contato.prototype.valida = function () {
 
     if (!this.body.nome) this.errors.push ('Nome é um campo obrigatório')
     if (!this.body.email && !this.body.telefone) {
-        this.errors.push ('Pelo um contato precisa ser enviado: e-mail ou telefone')
+        this.errors.push ('Pelo  menos um contato precisa ser enviado: e-mail ou telefone')
 
     }
 
